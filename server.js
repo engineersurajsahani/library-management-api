@@ -30,7 +30,13 @@ const options = {
       schemas: {
         Book: {
           type: 'object',
-          required: ['title', 'author', 'publishedYear', 'category', 'quantity'],
+          required: [
+            'title',
+            'author',
+            'publishedYear',
+            'category',
+            'quantity',
+          ],
           properties: {
             id: {
               type: 'string',
@@ -120,7 +126,14 @@ const options = {
         },
         IssueBook: {
           type: 'object',
-          required: ['bookId', 'bookName', 'studentId', 'studentName', 'issueDate', 'returnDate'],
+          required: [
+            'bookId',
+            'bookName',
+            'studentId',
+            'studentName',
+            'issueDate',
+            'returnDate',
+          ],
           properties: {
             id: {
               type: 'string',

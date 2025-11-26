@@ -33,7 +33,7 @@ router.get('/', async (request, response) => {
     const books = await Book.find();
     response.status(200).json(books);
   } catch (error) {
-    response.status(500).json();
+    response.status(500).json({ error: error.message });
   }
 });
 

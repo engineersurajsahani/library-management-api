@@ -16,7 +16,7 @@ For AWS :-
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 
-Step 1 — Installing Docker
+Step — Installing Docker
 ---> sudo apt update
 ---> sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ---> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -29,5 +29,6 @@ Step 1 — Installing Docker
 ---> groups
 ---> docker pull techsurajsahani/library-management-api:try
 ---> docker rm -f $(docker ps -aq) [ If Error ] Delete All Containers (Including Running Ones)
+---> docker run -p 80:4000 techsurajsahani/library-management-api:try
 
 
