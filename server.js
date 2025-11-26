@@ -26,6 +26,162 @@ const options = {
         description: 'Development server',
       },
     ],
+    components: {
+      schemas: {
+        Book: {
+          type: 'object',
+          required: ['title', 'author', 'publishedYear', 'category', 'quantity'],
+          properties: {
+            id: {
+              type: 'string',
+              description: 'The auto-generated id of the book',
+            },
+            title: {
+              type: 'string',
+              description: 'The title of the book',
+            },
+            author: {
+              type: 'string',
+              description: 'The author of the book',
+            },
+            publishedYear: {
+              type: 'number',
+              description: 'The year the book was published',
+            },
+            category: {
+              type: 'string',
+              description: 'The category of the book',
+            },
+            quantity: {
+              type: 'number',
+              description: 'The quantity of books available',
+            },
+            status: {
+              type: 'string',
+              enum: ['AVAILABLE', 'NOT AVAILABLE'],
+              description: 'The availability status of the book',
+            },
+            createdAt: {
+              type: 'string',
+              format: 'date-time',
+              description: 'The date the book was added',
+            },
+          },
+          example: {
+            title: 'The Great Gatsby',
+            author: 'F. Scott Fitzgerald',
+            publishedYear: 1925,
+            category: 'Fiction',
+            quantity: 5,
+          },
+        },
+        User: {
+          type: 'object',
+          required: ['name', 'username', 'email', 'password'],
+          properties: {
+            id: {
+              type: 'string',
+              description: 'The auto-generated id of the user',
+            },
+            name: {
+              type: 'string',
+              description: 'The name of the user',
+            },
+            username: {
+              type: 'string',
+              description: 'The username of the user',
+            },
+            email: {
+              type: 'string',
+              description: 'The email of the user',
+            },
+            password: {
+              type: 'string',
+              description: 'The password of the user',
+            },
+            role: {
+              type: 'string',
+              enum: ['LIBRARIAN', 'STUDENT'],
+              description: 'The role of the user',
+            },
+            createdAt: {
+              type: 'string',
+              format: 'date-time',
+              description: 'The date the user was registered',
+            },
+          },
+          example: {
+            name: 'John Doe',
+            username: 'johndoe',
+            email: 'john@example.com',
+            password: 'password123',
+            role: 'STUDENT',
+          },
+        },
+        IssueBook: {
+          type: 'object',
+          required: ['bookId', 'bookName', 'studentId', 'studentName', 'issueDate', 'returnDate'],
+          properties: {
+            id: {
+              type: 'string',
+              description: 'The auto-generated id of the issued book record',
+            },
+            bookId: {
+              type: 'string',
+              description: 'The ID of the book',
+            },
+            bookName: {
+              type: 'string',
+              description: 'The name of the book',
+            },
+            studentId: {
+              type: 'string',
+              description: 'The ID of the student',
+            },
+            studentName: {
+              type: 'string',
+              description: 'The name of the student',
+            },
+            issueDate: {
+              type: 'string',
+              format: 'date-time',
+              description: 'The date the book was issued',
+            },
+            returnDate: {
+              type: 'string',
+              format: 'date-time',
+              description: 'The date the book should be returned',
+            },
+            status: {
+              type: 'string',
+              enum: ['PENDING', 'ISSUE BOOK', 'RETURN BOOK'],
+              description: 'The status of the issued book',
+            },
+          },
+          example: {
+            bookId: '60f7b3b3d3a5e80015e6a3d1',
+            bookName: 'The Great Gatsby',
+            studentId: '60f7b3b3d3a5e80015e6a3d2',
+            studentName: 'John Doe',
+            issueDate: '2023-06-21T00:00:00.000Z',
+            returnDate: '2023-07-05T00:00:00.000Z',
+            status: 'ISSUE BOOK',
+          },
+        },
+      },
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    },
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ],
   },
   apis: ['./src/routes/*.js'],
 };

@@ -4,4 +4,3 @@ npm-debug.log
 .github
 test
 .coverage
-.env

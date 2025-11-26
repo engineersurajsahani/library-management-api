@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/letsupgrade');
+mongoose.connect('mongodb+srv://flavourstreet242_db_user:6DzL0iaN9LyXjnoO@cluster0.dqrpuqd.mongodb.net/?appName=Cluster0');
 
 const db = mongoose.connection;
 

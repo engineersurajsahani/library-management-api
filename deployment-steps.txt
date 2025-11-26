@@ -1,0 +1,33 @@
+For Docker Hub :- 
+
+(1) docker build -t library-management-api .
+
+(2) docker ps
+
+(3) docker image ls
+
+(4) docker tag library-management-api:latest techsurajsahani/library-management-api:try
+
+(5) docker login
+
+(6) docker push techsurajsahani/library-management-api:try
+
+For AWS :- 
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+
+Step 1 — Installing Docker
+---> sudo apt update
+---> sudo apt install apt-transport-https ca-certificates curl software-properties-common
+---> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+---> sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+---> apt-cache policy docker-ce
+---> sudo apt install docker-ce
+---> sudo systemctl status docker
+---> sudo usermod -aG docker ${USER}
+---> newgrp docker
+---> groups
+---> docker pull techsurajsahani/library-management-api:try
+---> docker rm -f $(docker ps -aq) [ If Error ] Delete All Containers (Including Running Ones)
+
+
